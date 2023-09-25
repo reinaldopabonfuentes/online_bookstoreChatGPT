@@ -25,5 +25,19 @@ public class GenreService {
         return genreRepository.save(genre);
     }
 
-    // Implement other service methods as needed
+    public Genre updateGenre(Long id, Genre genre) {
+        if (genreRepository.existsById(id)) {
+            genre.setId(id);
+            return genreRepository.save(genre);
+        }
+        return null; // Return null if the genre with the given id doesn't exist
+    }
+
+    public boolean deleteGenre(Long id) {
+        if (genreRepository.existsById(id)) {
+            genreRepository.deleteById(id);
+            return true;
+        }
+        return false; // Return false if the genre with the given id doesn't exist
+    }
 }

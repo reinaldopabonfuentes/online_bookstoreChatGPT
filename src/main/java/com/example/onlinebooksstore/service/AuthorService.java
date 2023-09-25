@@ -25,5 +25,19 @@ public class AuthorService {
         return authorRepository.save(author);
     }
 
-    // Implement other service methods as needed
+    public Author updateAuthor(Long id, Author author) {
+        if (authorRepository.existsById(id)) {
+            author.setId(id);
+            return authorRepository.save(author);
+        }
+        return null; // Return null if the author with the given id doesn't exist
+    }
+
+    public boolean deleteAuthor(Long id) {
+        if (authorRepository.existsById(id)) {
+            authorRepository.deleteById(id);
+            return true;
+        }
+        return false; // Return false if the author with the given id doesn't exist
+    }
 }

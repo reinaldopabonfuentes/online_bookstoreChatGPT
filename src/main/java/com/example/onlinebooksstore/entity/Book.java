@@ -27,5 +27,20 @@ public class Book {
     @Column(nullable = false)
     private int quantityAvailable;
 
-    // Constructors, getters, setters, and other methods
+    public Book(Long id, String title, Author author, Genre genre, double price, int quantityAvailable) {
+        this.id = id;
+        this.title = title;
+        this.author = author;
+        this.genre = genre;
+        this.price = price;
+        this.quantityAvailable = quantityAvailable;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
 }

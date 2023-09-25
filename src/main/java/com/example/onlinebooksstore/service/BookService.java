@@ -25,5 +25,19 @@ public class BookService {
         return bookRepository.save(book);
     }
 
-    // Implement other service methods as needed
+    public Book updateBook(Long id, Book book) {
+        if (bookRepository.existsById(id)) {
+            book.setId(id);
+            return bookRepository.save(book);
+        }
+        return null; // Return null if the book with the given id doesn't exist
+    }
+
+    public boolean deleteBook(Long id) {
+        if (bookRepository.existsById(id)) {
+            bookRepository.deleteById(id);
+            return true;
+        }
+        return false; // Return false if the book with the given id doesn't exist
+    }
 }
