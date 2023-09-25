@@ -24,6 +24,14 @@ public class Author {
         this.books = books;
     }
 
+    public Author(Long id) {
+        this.id = id;
+    }
+
+    public Author(String name) {
+        this.name = name;
+    }
+
     public Long getId() {
         return id;
     }
