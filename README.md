@@ -24,4 +24,35 @@ The Online Bookstore Application is a simple web-based platform that allows user
 ### Running the Application
 1. Clone the repository to your local machine:
 
-git clone <repository-url>
+git clone https://github.com/reinaldopabonfuentes/online_bookstoreChatGPT.git
+
+
+2. Navigate to the project directory:
+
+cd online-bookstore-app
+
+
+3. Start the MySQL Docker container:
+docker run -d --name mysql-online-bookstore -e MYSQL_ROOT_PASSWORD=root -e MYSQL_DATABASE=online_bookstore -p 3306:3306 mysql:latest
+
+
+4. Build and run the Spring Boot application:
+   mvn spring-boot:run
+
+
+5. The application will start and be accessible at [http://localhost:8080](http://localhost:8080).
+
+### API Endpoints
+- Books: [http://localhost:8080/api/books](http://localhost:8080/api/books)
+- Authors: [http://localhost:8080/api/authors](http://localhost:8080/api/authors)
+- Genres: [http://localhost:8080/api/genres](http://localhost:8080/api/genres)
+
+## Usage
+- Use Postman or any API client to interact with the API and perform CRUD operations on books, authors, and genres.
+- Refer to the API documentation for details on available endpoints and request formats.
+
+## Contribution
+Contributions are welcome! If you find any issues or have improvements to suggest, please open an issue or create a pull request.
+
+## License
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
